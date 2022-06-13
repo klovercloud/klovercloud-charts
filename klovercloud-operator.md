@@ -29,3 +29,5 @@ helm install kc-operator klovercloud-charts/klovercloud-operator \
 > --set platform.service.domain.wildcard.name=klovercloud.io \
 > --set platform.service.domain.wildcard.tlsSecret=secret-name --dry-run
 ```
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+

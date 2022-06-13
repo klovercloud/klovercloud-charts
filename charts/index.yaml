@@ -3,12 +3,12 @@ entries:
   klovercloud-operator:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2022-05-16T17:38:50.1663319+06:00"
+    created: "2022-06-13T11:05:02.9741277+06:00"
     description: A Helm chart for Klovercloud Helm Chart
-    digest: 3d8811dd9bb6942acb0a24967c4ecf4b3bea5c9b698e581cf5a688ebf79ea428
+    digest: 639d3537d8c78f1e6d766622df58b3cd88a2adb304da8183bd9a480448302353
     name: klovercloud-operator
     type: application
     urls:
     - klovercloud-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-16T17:38:50.1603608+06:00"
+generated: "2022-06-13T11:05:02.9731296+06:00"

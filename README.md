@@ -4,4 +4,4 @@ helm repo add klovercloud-charts https://klovercloud.github.io/klovercloud-chart
 ```
 
 ## Our Operators
-[Klovercloud Operator]()
+[Klovercloud Operator](https://github.com/klovercloud/klovercloud-charts/blob/master/klovercloud-operator.md#klovercloud-operator)

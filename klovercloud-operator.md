@@ -49,6 +49,7 @@ helm delete kc-operator
 | `loki.wsurl`                                 |          Loki Websocket URL                    | `""`                                           |    ◽     |
 | `loki.username`                              |          Loki Server Username                  | `""`                                           |    ◽     |
 | `loki.password`                              |          Loki Server Password                  | `""`                                           |    ◽     |
+| `prometheus.url`                             |          Prometheus URL                        | `""`                                           |    ◽     |
 
 ## Notification Webhook
 To receive event notification from the operator, set cluster.notification.url to expect the following post request from the operator:

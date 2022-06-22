@@ -44,8 +44,11 @@ helm delete kc-operator
 | `cluster.clusterissuer.name`                 |      Cluster Issuer Name for the Cluster       | `"letsencrypt-cluster"`                        |    ✅     |
 | `platform.service.domain.wildcard.name`      |          Domain Name to access Webapp          | `"eks.klovercloud.io"`                         |    ✅     |
 | `platform.service.domain.wildcard.tlsSecret` | SSL Certificate to secure connection to Webapp | `"wild-cert-secret"`                           |    ✅     |
-| `cluster.name`                               |                EKS Cluster Name                | `"EKS-CLUSTER-NAME"`                           |    ✅     |
-| `cluster.notification.url`                   |          Webhook URL for Notification          | `"notifications.klovercloud.io"`               |    ◽     |
+| `cluster.name`                               |                Cluster Name                    | `"My Cluster"`                                 |    ✅     |
+| `loki.url`                                   |          Loki Server URL                       | `""`                                           |    ◽     |
+| `loki.wsurl`                                 |          Loki Websocket URL                    | `""`                                           |    ◽     |
+| `loki.username`                              |          Loki Server Username                  | `""`                                           |    ◽     |
+| `loki.password`                              |          Loki Server Password                  | `""`                                           |    ◽     |
 
 ## Notification Webhook
 To receive event notification from the operator, set cluster.notification.url to expect the following post request from the operator:

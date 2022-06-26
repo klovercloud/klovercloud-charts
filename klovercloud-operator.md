@@ -53,6 +53,7 @@ helm delete kc-operator
 | `prometheus.url`                             |          Prometheus URL                        | `""`                                           |    ◽     |
 | `cluster.serviceDns.enabled`                 |          Service DNS enabled Or Disabled. If your cluster needs "svc.cluster.local" then set value to `true` otherwise `false`                     | `"true"`                                           |    ◽     |
 | `operator.db`                                |         In memory database used for Operator to save its states. Values are `CacheControllerDB`, `BuntDB`                                          | `"CacheControllerDB"`                              |    ◽     |
+| `cluster.securityContext.enabled`                                |         Cluster Pod Security Context Enabled or Disabled. Values are `true`, `false`                                          | `"true"`                              |    ◽     |
 
 ## Notification Webhook
 To receive event notification from the operator, set cluster.notification.url to expect the following post request from the operator:

@@ -39,17 +39,20 @@ helm delete kc-operator
 | `cluster.volumes.storageType`                |         Cloud Storage Provisioner Name         | `"EKS"`                                        |    ✅     |
 | `cluster.volumes.storageClass.readWriteMany` |        ReadWriteMany StorageClass Name         | `"eks-sc-ebs"`                                 |    ✅     |
 | `cluster.volumes.storageClass.readWriteOnce` |        ReadWriteMany StorageClass Name         | `"eks-sc-efs"`                                 |    ✅     |
-| `cluster.serviceAccount.name`                |      ServiceAccountName for the Operator       | `"klovercloud-operator-sa"`                    |    ✅     |
+| `cluster.serviceAccount.name`                |      ServiceAccountName for the Klovercloud Services       | `""`                              |    ◽     |
 | `cluster.volumes.snapshotClass.name`         |           Volume SnapshotClass Name            | `"ebs-snapclass"`                              |    ✅     |
 | `cluster.clusterissuer.name`                 |      Cluster Issuer Name for the Cluster       | `"letsencrypt-cluster"`                        |    ✅     |
-| `platform.service.domain.wildcard.name`      |          Domain Name to access Webapp          | `"eks.klovercloud.io"`                         |    ✅     |
-| `platform.service.domain.wildcard.tlsSecret` | SSL Certificate to secure connection to Webapp | `"wild-cert-secret"`                           |    ✅     |
+| `platform.service.domain.wildcard.name`      |          Domain Name to access Webapp          | `""`                                          |    ✅     |
+| `platform.service.domain.wildcard.tlsSecret` | SSL Certificate to secure connection to Webapp | `""`                                           |    ✅     |
+| `platform.service.servicemesh.domain.wildcard.name` | Domain Name to access Webapp through Service Mesh | `""`                                |    ◽     |
 | `cluster.name`                               |                Cluster Name                    | `"My Cluster"`                                 |    ✅     |
 | `loki.url`                                   |          Loki Server URL                       | `""`                                           |    ◽     |
 | `loki.wsurl`                                 |          Loki Websocket URL                    | `""`                                           |    ◽     |
 | `loki.username`                              |          Loki Server Username                  | `""`                                           |    ◽     |
 | `loki.password`                              |          Loki Server Password                  | `""`                                           |    ◽     |
 | `prometheus.url`                             |          Prometheus URL                        | `""`                                           |    ◽     |
+| `cluster.serviceDns.enabled`                 |          Service DNS enabled Or Disabled. If your cluster needs "svc.cluster.local" then set value to `true` otherwise `false`                     | `"true"`                                           |    ◽     |
+| `operator.db`                                |         In memory database used for Operator to save its states. Values are `CacheControllerDB`, `BuntDB`                                          | `"CacheControllerDB"`                              |    ◽     |
 
 ## Notification Webhook
 To receive event notification from the operator, set cluster.notification.url to expect the following post request from the operator:

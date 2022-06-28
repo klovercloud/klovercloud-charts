@@ -61,6 +61,9 @@ helm delete kc-operator
 | `platform.service.domain.wildcard.name`               |          Domain Name to access Webapp                     | `""`                                           |    ✅     |
 | `platform.service.domain.wildcard.tlsSecret`          | SSL Certificate to secure connection to Webapp            | `""`                                           |    ✅     |
 | `platform.service.servicemesh.domain.wildcard.name`   | Domain Name to access Webapp through Service Mesh         | `""`                                           |    ◽     |
+| `platform.service.webapp.domain`                      | Dedicated domain for Klovercloud Console. If not given then the value will be the value of `$platform.service.domain.wildcard.name`      | `""`                                           |    ◽     |
+| `platform.service.facade.domain`                      | Dedicated domain for Klovercloud Api Server. If not given then the value will be the value of `api.$platform.service.domain.wildcard.name`         | `""`                                           |    ◽     |
+| `platform.service.listener.domain`                    | Dedicated domain for Klovercloud Listener Service. If not given then the value will be the value of `listener.$platform.service.domain.wildcard.name`         | `""`                                           |    ◽     |
 
 
 ### AddOns

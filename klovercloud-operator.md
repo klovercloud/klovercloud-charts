@@ -60,6 +60,8 @@ helm delete kc-operator
 | `platform.user.companyAdmin.email`                    |    Admin Email for Klovercloud Webapp Login               | `""`                                           |    ✅     |
 | `platform.service.domain.wildcard.name`               |          Domain Name to access Webapp                     | `""`                                           |    ✅     |
 | `platform.service.domain.wildcard.tlsSecret`          | SSL Certificate to secure connection to Webapp            | `""`                                           |    ✅     |
+| `platform.service.tcp.domain.wildcard.name`           | Domain Name to connect using TCP protocol          | `""`                                              |    ◽     |
+| `platform.service.tcp.domain.wildcard.tlsSecret`       | SSL Certificate to secure connection to TCP           | `""`                                              |    ◽     |
 | `platform.service.servicemesh.domain.wildcard.name`   | Domain Name to access Webapp through Service Mesh         | `""`                                           |    ◽     |
 | `platform.service.webapp.domain`                      | Dedicated domain for Klovercloud Console. If not given then the value will be the value of `$platform.service.domain.wildcard.name`      | `""`                                           |    ◽     |
 | `platform.service.facade.domain`                      | Dedicated domain for Klovercloud Api Server. If not given then the value will be the value of `api.$platform.service.domain.wildcard.name`         | `""`                                           |    ◽     |

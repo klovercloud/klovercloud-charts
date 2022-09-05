@@ -1,14 +1,35 @@
 apiVersion: v1
 entries:
+  klovercloud-agent-operator:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-08-23T16:41:14.5164352+06:00"
+    description: A Helm chart for Klovercloud
+    digest: ded6b090b2b5eadf6ff9c8786c55e74c3a7f07d75e88a4c903e38a9b95907673
+    name: klovercloud-agent-operator
+    type: application
+    urls:
+    - klovercloud-agent-operator-0.1.0.tgz
+    version: 0.1.0
   klovercloud-operator:
   - apiVersion: v2
-    appVersion: 0.0.1
-    created: "2022-06-15T17:19:38.7950369+06:00"
+    appVersion: 0.0.2
+    created: "2022-08-23T16:41:14.5424143+06:00"
     description: A Helm chart for Klovercloud Helm Chart
-    digest: e4c132411327d2b27c78757b7a86f4579f4648bed713a6e148463cde32e6c599
+    digest: c713f3afaeb45714c684dee83ba7dcbae189acaa8e23824bdf53b6fd4ab6f47e
+    name: klovercloud-operator
+    type: application
+    urls:
+    - klovercloud-operator-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2022-08-23T16:41:14.5334316+06:00"
+    description: A Helm chart for Klovercloud Helm Chart
+    digest: 20e0e4cb63b4f742f99bf0d1db9d965b3b55686eecfe723adb80f026f7e67f39
     name: klovercloud-operator
     type: application
     urls:
     - klovercloud-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2022-06-15T17:19:38.7879995+06:00"
+generated: "2022-08-23T16:41:14.4999102+06:00"

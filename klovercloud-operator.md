@@ -27,25 +27,60 @@ helm install kc-operator klovercloud-charts/klovercloud-operator
 helm delete kc-operator
  ```
 ## Parameters
-| Name                                         |                  Description                   | Value                                          | Required |
+
+### Operator Parameters
+| Name                                         |                  Description                   | Value                                         | Required |
 |:---------------------------------------------|:----------------------------------------------:|------------------------------------------------|:--------:|
 | `operator.image.repository`                  | Klovercloud Operator Public Registry and image | `quay.io/klovercloud/klovercloud-operator-poc` |    ✅     |
-| `operator.image.tag`                         |        Operator image version reference        | `latest`, `0.1.2`                              |    ✅     |
+| `operator.image.tag`                         |        Operator image version reference        | `latest`                              |    ✅     |
 | `operator.namespace`                         |   namespace for the Operator to be deployed    | `"klovercloud"`                                |    ✅     |
-| `platform.namespace`                         |    Klovercloud Operator Platform Namespace     | `"klovercloud"`                                |    ✅     |
-| `platform.user.companyAdmin.password`        | Admin Password to Login to Klovercloud Webapp  | `"password"`                                   |    ✅     |
-| `platform.user.companyAdmin.email`           |    Admin Email for Klovercloud Webapp Login    | `"admin@klovercloud.com"`                      |    ✅     |
-| `db.mongo.password`                          |  Password to access Database for Klovercloud   | `"password"`                                   |    ◽     |
-| `cluster.volumes.storageType`                |         Cloud Storage Provisioner Name         | `"EKS"`                                        |    ✅     |
-| `cluster.volumes.storageClass.readWriteMany` |        ReadWriteMany StorageClass Name         | `"eks-sc-ebs"`                                 |    ✅     |
-| `cluster.volumes.storageClass.readWriteOnce` |        ReadWriteMany StorageClass Name         | `"eks-sc-efs"`                                 |    ✅     |
-| `cluster.serviceAccount.name`                |      ServiceAccountName for the Operator       | `"klovercloud-operator-sa"`                    |    ✅     |
-| `cluster.volumes.snapshotClass.name`         |           Volume SnapshotClass Name            | `"ebs-snapclass"`                              |    ✅     |
-| `cluster.clusterissuer.name`                 |      Cluster Issuer Name for the Cluster       | `"letsencrypt-cluster"`                        |    ✅     |
-| `platform.service.domain.wildcard.name`      |          Domain Name to access Webapp          | `"eks.klovercloud.io"`                         |    ✅     |
-| `platform.service.domain.wildcard.tlsSecret` | SSL Certificate to secure connection to Webapp | `"wild-cert-secret"`                           |    ✅     |
-| `cluster.name`                               |                EKS Cluster Name                | `"EKS-CLUSTER-NAME"`                           |    ✅     |
-| `cluster.notification.url`                   |          Webhook URL for Notification          | `"notifications.klovercloud.io"`               |    ◽     |
+| `operator.db.type`                           |         In memory database used for Operator to save its states. Values are `CacheControllerDB`, `BuntDB`                                          | `"CacheControllerDB"`                  |    ◽     |
+| `operator.db.includePersistentStorage`       |         If operator storage information needs to be persisted then value will be `true` otherwise `false`                                          | `"false"`                              |    ◽     |
+
+### Cluster Parameters
+| Name                                         |                  Description                                     | Value                                          | Required |
+|:---------------------------------------------|:----------------------------------------------------------------:|------------------------------------------------|:--------:|
+| `cluster.name`                               |                Cluster Name                                      | `"My Cluster"`                                 |    ✅     |
+| `cluster.volumes.storageType`                |         Cloud Storage Provisioner Name                           | `"EKS"`                                        |    ✅     |
+| `cluster.volumes.storageClass.readWriteMany` |        ReadWriteMany StorageClass Name                           | `"eks-sc-ebs"`                                 |    ✅     |
+| `cluster.volumes.storageClass.readWriteOnce` |        ReadWriteMany StorageClass Name                           | `"eks-sc-efs"`                                 |    ✅     |
+| `cluster.serviceAccount.name`                |      ServiceAccountName for the Klovercloud Services             | `""`                                           |    ◽     |
+| `cluster.volumes.snapshotClass.name`         |           Volume SnapshotClass Name                              | `"ebs-snapclass"`                              |    ✅     |
+| `cluster.clusterissuer.name`                 |      Cluster Issuer Name for the Cluster                         | `"letsencrypt-cluster"`                        |    ✅     |
+| `cluster.serviceDns.enabled`                 |      Service DNS enabled Or Disabled. If your cluster needs "svc.cluster.local" then set value to `true` otherwise `false`         | `"true"`                          |    ◽     |
+| `cluster.securityContext.enabled`            |      Cluster Pod Security Context Enabled or Disabled. Values are `true`, `false`                                                  | `"true"`                          |    ◽     |
+| `cluster.notification.url`                   |      Cluster notification Url. If Url is given then Operator will send A POST request notification to the given Url.               | `""`                              |    ◽     |
+
+### Platform Parameters
+| Name                                                  |                  Description                              | Value                                          | Required |
+|:------------------------------------------------------|:---------------------------------------------------------:|------------------------------------------------|:--------:|
+| `platform.namespace`                                  |    Klovercloud Operator Platform Namespace                | `"klovercloud"`                                |    ✅     |
+| `platform.db.mongo.password`                          |  Password to access Database for Klovercloud              | `""`                                           |    ◽     |
+| `platform.user.companyAdmin.password`                 | Admin Password to Login to Klovercloud Webapp             | `""`                                           |    ✅     |
+| `platform.user.companyAdmin.email`                    |    Admin Email for Klovercloud Webapp Login               | `""`                                           |    ✅     |
+| `platform.service.domain.wildcard.name`               |          Domain Name to access Webapp                     | `""`                                           |    ✅     |
+| `platform.service.domain.wildcard.tlsSecret`          | SSL Certificate to secure connection to Webapp            | `""`                                           |    ✅     |
+| `platform.service.tcp.domain.wildcard.name`           | Domain Name to connect using TCP protocol          | `""`                                              |    ◽     |
+| `platform.service.tcp.domain.wildcard.tlsSecret`       | SSL Certificate to secure connection to TCP           | `""`                                              |    ◽     |
+| `platform.service.servicemesh.domain.wildcard.name`   | Domain Name to access Webapp through Service Mesh         | `""`                                           |    ◽     |
+| `platform.service.webapp.domain`                      | Dedicated domain for Klovercloud Console. If not given then the value will be the value of `$platform.service.domain.wildcard.name`      | `""`                                           |    ◽     |
+| `platform.service.facade.domain`                      | Dedicated domain for Klovercloud Api Server. If not given then the value will be the value of `api.$platform.service.domain.wildcard.name`         | `""`                                           |    ◽     |
+| `platform.service.listener.domain`                    | Dedicated domain for Klovercloud Listener Service. If not given then the value will be the value of `listener.$platform.service.domain.wildcard.name`         | `""`                                           |    ◽     |
+
+
+### AddOns
+| Name                                         |                  Description                   | Value                                         | Required |
+|:---------------------------------------------|:----------------------------------------------:|------------------------------------------------|:--------:|
+| `loki.url`                                   |          Loki Server URL                       | `""`                                           |    ◽     |
+| `loki.wsurl`                                 |          Loki Websocket URL                    | `""`                                           |    ◽     |
+| `loki.username`                              |          Loki Server Username                  | `""`                                           |    ◽     |
+| `loki.password`                              |          Loki Server Password                  | `""`                                           |    ◽     |
+| `prometheus.url`                             |          Prometheus URL                        | `""`                                           |    ◽     |
+
+
+## Operator Images Tags
+
+[latest](#) [0.1.5](#)
 
 ## Notification Webhook
 To receive event notification from the operator, set cluster.notification.url to expect the following post request from the operator:

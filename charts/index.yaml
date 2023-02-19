@@ -3,9 +3,19 @@ entries:
   klovercloud-agent-operator:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-23T11:59:19.998170198+06:00"
+    created: "2023-02-19T16:00:36.180911434+06:00"
+    description: A Helm chart for Klovercloud Agent
+    digest: 45a42897c68582869aa6a20fbd5c319ca163bef27bdb78222bee3e00ddaaf619
+    name: klovercloud-agent-operator
+    type: application
+    urls:
+    - klovercloud-agent-operator-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-02-19T16:00:36.17777823+06:00"
     description: A Helm chart for Klovercloud
-    digest: 11c7d9bf90ef99b5901919c63e4ee859e01221b82448cc9282f71a8712d97fef
+    digest: faa569b7d3b7d414082a1a484cdb9787fea684af10b9176b76ec3ba43acfe1ab
     name: klovercloud-agent-operator
     type: application
     urls:
@@ -13,7 +23,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-23T11:59:19.996445935+06:00"
+    created: "2023-02-19T16:00:36.174755151+06:00"
     description: A Helm chart for Klovercloud
     digest: 470c73cd23d893190d9744ac0941287987e74e612762a328841c8b80bea955d4
     name: klovercloud-agent-operator
@@ -24,7 +34,7 @@ entries:
   klovercloud-operator:
   - apiVersion: v2
     appVersion: 0.0.2
-    created: "2022-11-23T11:59:20.000792409+06:00"
+    created: "2023-02-19T16:00:36.183882084+06:00"
     description: A Helm chart for Klovercloud Helm Chart
     digest: 86f99dd0646c063143154af69eea99ddf32d25cc14fcf1d6ea171d8670b4eabb
     name: klovercloud-operator
@@ -34,7 +44,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2022-11-23T11:59:19.999076375+06:00"
+    created: "2023-02-19T16:00:36.182845677+06:00"
     description: A Helm chart for Klovercloud Helm Chart
     digest: 20e0e4cb63b4f742f99bf0d1db9d965b3b55686eecfe723adb80f026f7e67f39
     name: klovercloud-operator
@@ -42,4 +52,4 @@ entries:
     urls:
     - klovercloud-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-23T11:59:19.994265476+06:00"
+generated: "2023-02-19T16:00:36.172041669+06:00"

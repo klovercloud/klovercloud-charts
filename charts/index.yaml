@@ -3,7 +3,7 @@ entries:
   klovercloud-agent-operator:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-18T15:19:53.164038732+06:00"
+    created: "2023-07-19T11:04:25.255799947+06:00"
     description: A Helm chart for Klovercloud Agent
     digest: 68bf92c6fa1486de5ecd5c71c36f88512f1b6b5437c3483db28967e3a810116a
     name: klovercloud-agent-operator
@@ -13,7 +13,7 @@ entries:
     version: 0.2.4
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-18T15:19:53.158321414+06:00"
+    created: "2023-07-19T11:04:25.250057735+06:00"
     description: A Helm chart for Klovercloud Agent
     digest: 10f683c0cf23d67c822cce4b9a83c0837fa57ed9c8fa4f2e47594495ad5735f2
     name: klovercloud-agent-operator
@@ -23,7 +23,7 @@ entries:
     version: 0.2.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-18T15:19:53.153107562+06:00"
+    created: "2023-07-19T11:04:25.24509916+06:00"
     description: A Helm chart for Klovercloud Agent
     digest: 7bb4bbbc56e87a8f1f23df1df2ab7d58e11fbe3b93246e5fa32a8b81c39527d7
     name: klovercloud-agent-operator
@@ -34,9 +34,9 @@ entries:
   klovercloud-operator:
   - apiVersion: v2
     appVersion: 0.0.2
-    created: "2023-07-18T15:19:53.166360605+06:00"
+    created: "2023-07-19T11:04:25.258484546+06:00"
     description: A Helm chart for Klovercloud Helm Chart
-    digest: 4f4e7a17fad7734bee6760c5fb792e7ae1e8597f037daa85b8b839eb7b821e20
+    digest: 0a383ccdc6e3e1491b7cc864fa6537488077aaed355fd89d219d0fe8cb2801e2
     name: klovercloud-operator
     type: application
     urls:
@@ -44,7 +44,7 @@ entries:
     version: 0.2.3
   - apiVersion: v2
     appVersion: 0.0.2
-    created: "2023-07-18T15:19:53.165034764+06:00"
+    created: "2023-07-19T11:04:25.257010689+06:00"
     description: A Helm chart for Klovercloud Helm Chart
     digest: 86f99dd0646c063143154af69eea99ddf32d25cc14fcf1d6ea171d8670b4eabb
     name: klovercloud-operator
@@ -52,4 +52,4 @@ entries:
     urls:
     - klovercloud-operator-0.2.0.tgz
     version: 0.2.0
-generated: "2023-07-18T15:19:53.148793634+06:00"
+generated: "2023-07-19T11:04:25.240629447+06:00"

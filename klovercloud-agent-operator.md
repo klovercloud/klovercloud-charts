@@ -128,5 +128,9 @@ helm delete kc-agent-operator
 | `grafana.username`    |                  Grafana Server Username                   | `""`                     |    ◽     |
 | `grafana.password`    |                  Grafana Server Password                   | `""`                     |    ◽     |
 | `kiali.url`           |      Kiali Server Base URl (e.g. "https://kiali.com")      | `""`                     |    ◽     |
-| `kiali.username`      |                 Kiali Server Username                 | `""`                     |    ◽     |
-| `kiali.token`         |                  Kiali Server Token                   | `""`                     |    ◽     |
+| `kiali.username`      |                   Kiali Server Username                    | `""`                     |    ◽     |
+| `kiali.token`         |                     Kiali Server Token                     | `""`                     |    ◽     |
+| `argocd.url`          |                         ArgoCD URL                         | `""`                     |    ◽     |
+| `argocd.username`     |                      ArgoCD Username                       | `""`                     |    ◽     |
+| `argocd.password`     |                      ArgoCD Password                       | `""`                     |    ◽     |
+| `argocd.port`         |                        ArgoCD Port                         | `""`                     |    ◽     |

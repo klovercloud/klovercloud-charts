@@ -5,7 +5,9 @@
 ```bash
 helm repo add klovercloud-charts https://klovercloud.github.io/klovercloud-charts/charts
 
-helm install kc-agent-operator --namespace klovercloud klovercloud-charts/klovercloud-agent-operator --version 0.2.5 \
+helm repo update
+
+helm install kc-agent-operator --namespace klovercloud klovercloud-charts/klovercloud-agent-operator --version 0.2.6 \
     --set cluster.volumes.storageType="EKS" \
     --set cluster.volumes.storageClass.readWriteMany="csi-obs" \
     --set cluster.volumes.storageClass.readWriteOnce="csi-ebs" \
@@ -33,6 +35,7 @@ helm delete kc-agent-operator
 
 | version | Release Date |
 |:--------|:------------:|
+| `0.2.6` |   10/09/24   | 
 | `0.2.5` |   10/07/24   | 
 | `0.2.4` |   04/01/24   | 
 | `0.2.3` |   18/05/23   |
@@ -112,25 +115,27 @@ helm delete kc-agent-operator
 
 ### AddOns
 
-| Name                  |                        Description                         | Value                    | Required |
-|:----------------------|:----------------------------------------------------------:|--------------------------|:--------:|
-| `ci.namespace`        |                     Tekton namespaces                      | `"kcp-tekton-pipelines"` |    ◽     |
-| `ci.tekton.enabled`   |           Tekton is installed or not in cluster            | `"true"`                 |    ◽     |
-| `loki.url`            |       Loki Server Base URl (e.g. "https://loki.com")       | `""`                     |    ◽     |
-| `loki.username`       |                    Loki Server Username                    | `""`                     |    ◽     |
-| `loki.password`       |                    Loki Server Password                    | `""`                     |    ◽     |
-| `prometheus.url`      | Prometheus Server Base URl (e.g. "https://prometheus.com") | `""`                     |    ◽     |
-| `prometheus.username` |                 Prometheus Server Username                 | `""`                     |    ◽     |
-| `prometheus.password` |                 Prometheus Server Password                 | `""`                     |    ◽     |
-| `temporal.host`       |          Temporal Host is required for LightHouse          | `""`                     |    ◽     |
-| `temporal.namespace`  |       Temporal Namespace is required for LightHouse        | `""`                     |    ◽     |
-| `grafana.url`         |    Grafana Server Base URl (e.g. "https://grafana.com")    | `""`                     |    ◽     |
-| `grafana.username`    |                  Grafana Server Username                   | `""`                     |    ◽     |
-| `grafana.password`    |                  Grafana Server Password                   | `""`                     |    ◽     |
-| `kiali.url`           |      Kiali Server Base URl (e.g. "https://kiali.com")      | `""`                     |    ◽     |
-| `kiali.username`      |                   Kiali Server Username                    | `""`                     |    ◽     |
-| `kiali.token`         |                     Kiali Server Token                     | `""`                     |    ◽     |
-| `argocd.url`          |                         ArgoCD URL                         | `""`                     |    ◽     |
-| `argocd.username`     |                      ArgoCD Username                       | `""`                     |    ◽     |
-| `argocd.password`     |                      ArgoCD Password                       | `""`                     |    ◽     |
-| `argocd.port`         |                        ArgoCD Port                         | `""`                     |    ◽     |
+| Name                   |                                                      Description                                                      | Value                    | Required |
+|:-----------------------|:---------------------------------------------------------------------------------------------------------------------:|--------------------------|:--------:|
+| `ci.namespace`         |                                                   Tekton namespaces                                                   | `"kcp-tekton-pipelines"` |    ◽     |
+| `ci.tekton.enabled`    |         Tekton is installed or not in cluster (options: `true`,`false`). For installing value will be `true`          | `"true"`                 |    ◽     |
+| `loki.url`             |                                    Loki Server Base URl (e.g. "https://loki.com")                                     | `""`                     |    ◽     |
+| `loki.username`        |                                                 Loki Server Username                                                  | `""`                     |    ◽     |
+| `loki.password`        |                                                 Loki Server Password                                                  | `""`                     |    ◽     |
+| `prometheus.enabled`   | Prometheus & Grafana Stack installed or not in cluster (options: `true`,`false`). For installing value will be `true` | `"true"`                 |    ◽     |
+| `prometheus.url`       |                              Prometheus Server Base URl (e.g. "https://prometheus.com")                               | `""`                     |    ◽     |
+| `prometheus.namespace` |                        Prometheus Namespace. If doesn't exists; it will create new namespace.                         | `"monitoring"`           |    ◽     |
+| `prometheus.username`  |                                              Prometheus Server Username                                               | `""`                     |    ◽     |
+| `prometheus.password`  |                                              Prometheus Server Password                                               | `""`                     |    ◽     |
+| `temporal.host`        |                                       Temporal Host is required for LightHouse                                        | `""`                     |    ◽     |
+| `temporal.namespace`   |                                     Temporal Namespace is required for LightHouse                                     | `""`                     |    ◽     |
+| `grafana.url`          |                                 Grafana Server Base URl (e.g. "https://grafana.com")                                  | `""`                     |    ◽     |
+| `grafana.username`     |                                                Grafana Server Username                                                | `""`                     |    ◽     |
+| `grafana.password`     |                                                Grafana Server Password                                                | `""`                     |    ◽     |
+| `kiali.url`            |                                   Kiali Server Base URl (e.g. "https://kiali.com")                                    | `""`                     |    ◽     |
+| `kiali.username`       |                                                 Kiali Server Username                                                 | `""`                     |    ◽     |
+| `kiali.token`          |                                                  Kiali Server Token                                                   | `""`                     |    ◽     |
+| `argocd.url`           |                                                      ArgoCD URL                                                       | `""`                     |    ◽     |
+| `argocd.username`      |                                                    ArgoCD Username                                                    | `""`                     |    ◽     |
+| `argocd.password`      |                                                    ArgoCD Password                                                    | `""`                     |    ◽     |
+| `argocd.port`          |                                                      ArgoCD Port                                                      | `""`                     |    ◽     |

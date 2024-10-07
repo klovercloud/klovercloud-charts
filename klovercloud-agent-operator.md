@@ -79,7 +79,7 @@ helm delete kc-agent-operator
 | `cluster.clusterIssuer.name`                 |                     Cluster Issuer Name for SSL/Certificate Management                      | `""`            |    ◽     |
 | `cluster.serviceAccount.name`                |                            If cluster needs any service account                             | `""`            |    ◽     |
 | `cluster.secret.imagePullSecret.name`        |                                   Image pull secret name                                    | `""`            |    ◽     |
-| `cluster.notification.url`                   |                               Notification Url for all events                               | `""`            |    ◽     |
+| `cluster.notification.webhook.url`           |                               Notification Url for all events                               | `""`            |    ◽     |
 | `cluster.serviceDns.enabled`                 |                        DNS enabled or not (options: `true`,`false`)                         | `""`            |    ◽     |
 | `cluster.volumes.persistentStorage.enabled`  |                 Storage for saving CD Agent Data (options: `true`,`false`)                  | `"false"`       |    ◽     |
 | `cluster.psp.enforcePrivilegedPsp`           |                        Force PSP to deploy (options: `True`,`False`)                        | `"True"`        |    ◽     |

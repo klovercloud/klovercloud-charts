@@ -15,7 +15,7 @@ helm repo add klovercloud-charts https://klovercloud.github.io/klovercloud-chart
 
 helm repo update
 
-helm install kc-operator --namespace klovercloud klovercloud-charts/klovercloud-operator --version 0.2.1 \
+helm install kc-operator --namespace klovercloud klovercloud-charts/klovercloud-operator --version 0.2.5 \
     --set cluster.volumes.storageType="EKS" \
     --set cluster.volumes.storageClass.readWriteMany="csi-obs" \
     --set cluster.volumes.storageClass.readWriteOnce="csi-ebs" \
@@ -43,14 +43,15 @@ helm delete kc-operator
 
 | version | Release Date |
 |:--------|:------------:|
-| `0.2.1` |   10/10/24   | 
+| `0.2.5` |   10/10/24   | 
+| `0.2.4` |   10/05/24   | 
 
 
 ## Operator Image Tags
 
 | tag    | Release Date |
 |:-------|:------------:|
-| `v2.0` |   10/10/24   | 
+| `v2.0` |   10/10/24   |
 
 
 ## Parameters
@@ -82,25 +83,32 @@ helm delete kc-operator
 
 ### Platform Parameters
 
-| Name                                                |                                                                      Description                                                                      | Value           | Required |
-|:----------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------:|-----------------|:--------:|
-| `platform.namespace`                                |                                                        Klovercloud Operator Platform Namespace                                                        | `"klovercloud"` |    ✅     |
-| `platform.queue.kafka.server`                       |                      Kafka Server Address (e.g. kafka-0.kafka.namespace). If not provided, Operator will create a kafka cluster                       | `""`            |    ◽     |
-| `platform.queue.kafka.port`                         |          Kafka Port (e.g. 5323). If `platform.queue.kafka.server`  not provided, Operator will create a kafka cluster  and add defautl port           | `""`            |    ◽     |
-| `platform.db.mongo.server`                          |                     Mongo Server Address (e.g. mongodb-0.mongo.namespace). If not provided, Operator will create a mongo cluster                      | `""`            |    ◽     |
-| `platform.db.mongo.port`                            |       Mongo Server Address (e.g. 21717). If `platform.db.mongo.server` not provided, Operator will create a mongo cluster  and add defautl port       | `""`            |    ◽     |
-| `platform.db.mongo.username`                        |                                                      Username to access Database for Klovercloud                                                      | `""`            |    ◽     |
-| `platform.db.mongo.password`                        |                                                      Password to access Database for Klovercloud                                                      | `""`            |    ◽     |
-| `platform.user.companyAdmin.password`               |                                                     Admin Password to Login to Klovercloud Webapp                                                     | `""`            |    ✅     |
-| `platform.user.companyAdmin.email`                  |                                                       Admin Email for Klovercloud Webapp Login                                                        | `""`            |    ✅     |
-| `platform.service.domain.wildcard.name`             |                                                             Domain Name to access Webapp                                                              | `""`            |    ✅     |
-| `platform.service.domain.wildcard.tlsSecret`        |                                                    SSL Certificate to secure connection to Webapp                                                     | `""`            |    ✅     |
-| `platform.service.tcp.domain.wildcard.name`         |                                                       Domain Name to connect using TCP protocol                                                       | `""`            |    ◽     |
-| `platform.service.tcp.domain.wildcard.tlsSecret`    |                                                      SSL Certificate to secure connection to TCP                                                      | `""`            |    ◽     |
-| `platform.service.servicemesh.domain.wildcard.name` |                                                   Domain Name to access Webapp through Service Mesh                                                   | `""`            |    ◽     |
-| `platform.service.webapp.domain`                    |          Dedicated domain for Klovercloud Console. If not given then the value will be the value of `$platform.service.domain.wildcard.name`          | `""`            |    ◽     |
-| `platform.service.facade.domain`                    |      Dedicated domain for Klovercloud Api Server. If not given then the value will be the value of `api.$platform.service.domain.wildcard.name`       | `""`            |    ◽     |
-| `platform.service.listener.domain`                  | Dedicated domain for Klovercloud Listener Service. If not given then the value will be the value of `listener.$platform.service.domain.wildcard.name` | `""`            |    ◽     |
+| Name                                                |                                                                      Description                                                                      | Value                                                                | Required |
+|:----------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------:|----------------------------------------------------------------------|:--------:|
+| `platform.namespace`                                |                                                        Klovercloud Operator Platform Namespace                                                        | `"klovercloud"`                                                      |    ✅     |
+| `platform.queue.kafka.server`                       |                      Kafka Server Address (e.g. kafka-0.kafka.namespace). If not provided, Operator will create a kafka cluster                       | `""`                                                                 |    ◽     |
+| `platform.queue.kafka.port`                         |          Kafka Port (e.g. 5323). If `platform.queue.kafka.server`  not provided, Operator will create a kafka cluster  and add defautl port           | `""`                                                                 |    ◽     |
+| `platform.db.mongo.server`                          |                     Mongo Server Address (e.g. mongodb-0.mongo.namespace). If not provided, Operator will create a mongo cluster                      | `""`                                                                 |    ◽     |
+| `platform.db.mongo.port`                            |       Mongo Server Address (e.g. 21717). If `platform.db.mongo.server` not provided, Operator will create a mongo cluster  and add defautl port       | `""`                                                                 |    ◽     |
+| `platform.db.mongo.username`                        |                                                      Username to access Database for Klovercloud                                                      | `""`                                                                 |    ◽     |
+| `platform.db.mongo.password`                        |                                                      Password to access Database for Klovercloud                                                      | `""`                                                                 |    ◽     |
+| `platform.user.companyAdmin.password`               |                                                     Admin Password to Login to Klovercloud Webapp                                                     | `""`                                                                 |    ✅     |
+| `platform.user.companyAdmin.email`                  |                                                       Admin Email for Klovercloud Webapp Login                                                        | `""`                                                                 |    ✅     |
+| `platform.service.domain.wildcard.name`             |                                                             Domain Name to access Webapp                                                              | `""`                                                                 |    ✅     |
+| `platform.service.domain.wildcard.tlsSecret`        |                                                    SSL Certificate to secure connection to Webapp                                                     | `""`                                                                 |    ✅     |
+| `platform.service.tcp.domain.wildcard.name`         |                                                       Domain Name to connect using TCP protocol                                                       | `""`                                                                 |    ◽     |
+| `platform.service.tcp.domain.wildcard.tlsSecret`    |                                                      SSL Certificate to secure connection to TCP                                                      | `""`                                                                 |    ◽     |
+| `platform.service.servicemesh.domain.wildcard.name` |                                                   Domain Name to access Webapp through Service Mesh                                                   | `""`                                                                 |    ◽     |
+| `platform.service.webapp.domain`                    |          Dedicated domain for Klovercloud Console. If not given then the value will be the value of `$platform.service.domain.wildcard.name`          | `""`                                                                 |    ◽     |
+| `platform.service.facade.domain`                    |      Dedicated domain for Klovercloud Api Server. If not given then the value will be the value of `api.$platform.service.domain.wildcard.name`       | `""`                                                                 |    ◽     |
+| `platform.service.listener.domain`                  | Dedicated domain for Klovercloud Listener Service. If not given then the value will be the value of `listener.$platform.service.domain.wildcard.name` | `""`                                                                 |    ◽     |
+| `platform.service.webapp.disabledFeatures`          |                                                             Disabled features from Webapp                                                             | `"queue,object-storage,marketplace,billing,my-plans,support,ticket"` |    ◽     |
+| `platform.servicemesh.istio.enabled`                |                                            Istio Enabled for Webapp and Cluster (options: `true`, `false`)                                            | `"true`                                                              |    ◽     |
+| `platform.temporal.host`                            |                                                                     Temporal Host                                                                     | `""`                                                                 |    ✅     |
+| `platform.temporal.namespace`                       |                                                                  Temporal Namespace                                                                   | `""`                                                                 |    ✅     |
+| `platform.argocd.url`                               |                                                                      ArgoCD URL                                                                       | `""`                                                                 |    ◽     |
+| `platform.service.billing.enabled`                               |                                              Billing Service Enabled or not   (options: `true`, `false`)                                              | `""`                                                                 |    ◽     |
+| `platform.ssl.enabled`                               |                                                   Platform SSL enabled   (options: `true`, `false`)                                                   | `"true"`                                                             |    ◽     |
 
 ### AddOns
 | Name                                         |                  Description                   | Value                                         | Required |

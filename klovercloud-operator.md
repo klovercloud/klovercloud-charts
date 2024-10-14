@@ -115,6 +115,7 @@ helm delete kc-operator
 | `platform.temporal.namespace`                       |                                                                            Temporal Namespace                                                                             | `""`                                                                 |    ✅     |
 | `platform.argocd.url`                               |                                                                                ArgoCD URL                                                                                 | `""`                                                                 |    ◽     |
 | `platform.service.billing.enabled`                  |                                                        Billing Service Enabled or not   (options: `true`, `false`)                                                        | `""`                                                                 |    ◽     |
+| `platform.user.adminUser.enabled`                   |            Is Admin User for each company verfied by default  (options: `true`, `false`). If `false` admin user needs to be verfied through email verfication             | `"false"`                                                            |    ◽     |
 
 ### AddOns
 

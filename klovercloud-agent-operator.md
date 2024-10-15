@@ -65,26 +65,28 @@ helm delete kc-agent-operator
 
 ### Cluster Parameters
 
-| Name                                         |                                         Description                                         | Value           | Required |
-|:---------------------------------------------|:-------------------------------------------------------------------------------------------:|-----------------|:--------:|
-| `cluster.id`                                 |                                      Cluster Unique ID                                      | `""`            |    ◽     |
-| `cluster.type`                               |                         Cluster Type (options: `PRIVATE`, `PUBLIC`)                         | `"PRIVATE"`     |    ◽     |
-| `cluster.host`                               |                    Cluster Host (options: `KLOVERCLOUD`, `ROBI`, `BRAC`)                    | `"KLOVERCLOUD"` |    ◽     |
-| `cluster.creationType`                       |                   Cluster Creation Type (options: `MANUAL`, `AUTOMATED`)                    | `"MANUAL"`      |    ◽     |
-| `cluster.name`                               |                                        Cluster Name                                         | `""`            |    ◽     |
-| `cluster.volumes.storageType`                | Cluster Volume Storage Type (options: `EKS`, `GCP`, `AZURE`, `DIGITAL_OCEAN`, `BARE_METAL`) | `""`            |    ✅     |
-| `cluster.volumes.storageClass.readWriteMany` |                                Cluster Storage Class for RWM                                | `""`            |    ✅     |
-| `cluster.volumes.storageClass.readWriteOnce` |                                Cluster Storage Class for RWO                                | `""`            |    ✅     |
-| `cluster.volumes.snapshotClass.name`         |                                Cluster Volume Snapshot Name                                 | `""`            |    ✅     |
-| `cluster.clusterIssuer.name`                 |                     Cluster Issuer Name for SSL/Certificate Management                      | `""`            |    ◽     |
-| `cluster.serviceAccount.name`                |                            If cluster needs any service account                             | `""`            |    ◽     |
-| `cluster.secret.imagePullSecret.name`        |                                   Image pull secret name                                    | `""`            |    ◽     |
-| `cluster.notification.webhook.url`           |                               Notification Url for all events                               | `""`            |    ◽     |
-| `cluster.serviceDns.enabled`                 |                        DNS enabled or not (options: `true`,`false`)                         | `""`            |    ◽     |
-| `cluster.volumes.persistentStorage.enabled`  |                 Storage for saving CD Agent Data (options: `true`,`false`)                  | `"false"`       |    ◽     |
-| `cluster.psp.enforcePrivilegedPsp`           |                        Force PSP to deploy (options: `True`,`False`)                        | `"True"`        |    ◽     |
-| `cluster.serviceMesh.istio.enabled`          |                       Istio enabled or not (options: `true`,`false`)                        | `"false"`       |    ◽     |
-| `cluster.nginx.ingressClass.name`            |                                     Ingress class name                                      | `""`            |    ◽     |
+| Name                                              |                                                                Description                                                                 | Value           | Required |
+|:--------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------:|-----------------|:--------:|
+| `cluster.id`                                      |                                                             Cluster Unique ID                                                              | `""`            |    ◽     |
+| `cluster.type`                                    |                                                Cluster Type (options: `PRIVATE`, `PUBLIC`)                                                 | `"PRIVATE"`     |    ◽     |
+| `cluster.host`                                    |                                           Cluster Host (options: `KLOVERCLOUD`, `ROBI`, `BRAC`)                                            | `"KLOVERCLOUD"` |    ◽     |
+| `cluster.creationType`                            |                                           Cluster Creation Type (options: `MANUAL`, `AUTOMATED`)                                           | `"MANUAL"`      |    ◽     |
+| `cluster.name`                                    |                                                                Cluster Name                                                                | `""`            |    ◽     |
+| `cluster.volumes.storageType`                     |                        Cluster Volume Storage Type (options: `EKS`, `GCP`, `AZURE`, `DIGITAL_OCEAN`, `BARE_METAL`)                         | `""`            |    ✅     |
+| `cluster.volumes.storageClass.readWriteMany`      |                                                       Cluster Storage Class for RWM                                                        | `""`            |    ✅     |
+| `cluster.volumes.storageClass.readWriteOnce`      |                                                       Cluster Storage Class for RWO                                                        | `""`            |    ✅     |
+| `cluster.volumes.snapshotClass.name`              |                                                        Cluster Volume Snapshot Name                                                        | `""`            |    ✅     |
+| `cluster.volumes.snapshotClassRWM.name`           | Cluster Volume Snapshot Name For ReadWriteMany (FileStorage). If not given, it will take the value of `cluster.volumes.snapshotClass.name` | `""`            |    ◽     |
+| `cluster.clusterIssuer.name`                      |                                             Cluster Issuer Name for SSL/Certificate Management                                             | `""`            |    ◽     |
+| `cluster.serviceAccount.name`                     |                                                    If cluster needs any service account                                                    | `""`            |    ◽     |
+| `cluster.secret.imagePullSecret.name`             |                                                           Image pull secret name                                                           | `""`            |    ◽     |
+| `cluster.notification.webhook.url`                |                                                      Notification Url for all events                                                       | `""`            |    ◽     |
+| `cluster.serviceDns.enabled`                      |                                                DNS enabled or not (options: `true`,`false`)                                                | `""`            |    ◽     |
+| `cluster.volumes.persistentStorage.enabled`       |                                         Storage for saving CD Agent Data (options: `true`,`false`)                                         | `"false"`       |    ◽     |
+| `cluster.psp.enforcePrivilegedPsp`                |                                               Force PSP to deploy (options: `True`,`False`)                                                | `"True"`        |    ◽     |
+| `cluster.serviceMesh.istio.enabled`               |                                               Istio enabled or not (options: `true`,`false`)                                               | `"false"`       |    ◽     |
+| `cluster.serviceMesh.istio.gateway.name`          |                                                         Istio Default Gateway name                                                         | `""`            |    ◽     |
+| `cluster.nginx.ingressClass.name`                 |                                                             Ingress class name                                                             | `""`            |    ◽     |
 
 ### Platform Parameters
 
@@ -122,6 +124,7 @@ helm delete kc-agent-operator
 | `loki.url`             |                                    Loki Server Base URl (e.g. "https://loki.com")                                     | `""`                     |    ◽     |
 | `loki.username`        |                                                 Loki Server Username                                                  | `""`                     |    ◽     |
 | `loki.password`        |                                                 Loki Server Password                                                  | `""`                     |    ◽     |
+| `loki.orgId`           |                                        If Loki has tenant then provide the Id                                         | `""`                     |    ◽     |
 | `prometheus.enabled`   | Prometheus & Grafana Stack installed or not in cluster (options: `true`,`false`). For installing value will be `true` | `"true"`                 |    ◽     |
 | `prometheus.url`       |                              Prometheus Server Base URl (e.g. "https://prometheus.com")                               | `""`                     |    ◽     |
 | `prometheus.namespace` |                        Prometheus Namespace. If doesn't exists; it will create new namespace.                         | `"monitoring"`           |    ◽     |

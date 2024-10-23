@@ -112,10 +112,14 @@ helm delete kc-operator
 | `platform.service.proxyServer.domain`                    |    Dedicated domain for Klovercloud Proxy Server. If not given then the value will be the value of `proxy.${platform.service.domain.wildcard.name}`     | `""`                                                                 |    ◽     |
 | `platform.service.webapp.disabledFeatures`               |                                                              Disabled features from Webapp                                                              | `"queue,object-storage,marketplace,billing,my-plans,support,ticket"` |    ◽     |
 | `platform.service.webapp.istioEnabled`                   |                                             Istio Enabled for Webapp and Cluster (options: `true`, `false`)                                             | `"true`                                                              |    ◽     |
+| `platform.paymentGateway.mode`                           |                            Payment Gateway Mode (options: `PRODUCTION`, `TEST`) Required if billing feature is not disabled.                            | `"PRODUCTION`                                                        |    ◽     |
+| `platform.paymentGateway.sslCommerz.storeId`             |                                                          Payment Gateway SSL Commerz Store ID                                                           | `""`                                                                 |    ◽     |
+| `platform.paymentGateway.sslCommerz.storePassword`       |                                                       Payment Gateway SSL Commerz Store Password.                                                       | `""`                                                                 |    ◽     |
+| `platform.paymentGateway.stripe.publicKey`               |                                                           Payment Gateway Stripe Public Key.                                                            | `""`                                                                 |    ◽     |
+| `platform.paymentGateway.stripe.secretKey`               |                                                             Payment Gateway StriSecret Key                                                              | `""`                                                                 |    ◽     |
 | `platform.temporal.host`                                 |                                                                      Temporal Host                                                                      | `""`                                                                 |    ✅     |
 | `platform.temporal.namespace`                            |                                                                   Temporal Namespace                                                                    | `""`                                                                 |    ✅     |
 | `platform.argocd.url`                                    |                                                                       ArgoCD URL                                                                        | `""`                                                                 |    ◽     |
-| `platform.service.billing.enabled`                       |                                               Billing Service Enabled or not   (options: `true`, `false`)                                               | `""`                                                                 |    ◽     |
 | `platform.user.adminUser.enabled`                        |   Is Admin User for each company verfied by default  (options: `true`, `false`). If `false` admin user needs to be verfied through email verfication    | `"false"`                                                            |    ◽     |
 | `platform.smtp.server`                                   |                                                                       SMTP Server                                                                       | `""`                                                                 |    ◽     |
 | `platform.smtp.port`                                     |                                                                    SMTP Server Port                                                                     | `""`                                                                 |    ◽     |
@@ -124,12 +128,15 @@ helm delete kc-operator
 | `platform.smtp.mail.address`                             |                                                                SMTP Server Mail Address                                                                 | `""`                                                                 |    ◽     |
 | `platform.smtp.mail.Template`                            |                                                                SMTP Server Mail Template                                                                | `""`                                                                 |    ◽     |
 | `platform.smtp.mail.noReplyMessage`                      |                                                              SMTP Server No Message Reply                                                               | `""`                                                                 |    ◽     |
+| `platform.ticketing.s3BucketName`                        |                              Aws Bucket name for ticketing to store ticketing files; Required if ticketing service enabled                              | `""`                                                                 |    ◽     |
 
 ### AddOns
 
-| Name                |  Description   | Value | Required |
-|:--------------------|:--------------:|-------|:--------:|
-| `ci.tekton.enabled` | Tekton Enabled | `""`  |    ◽     |
+| Name                |                                  Description                                   | Value | Required |
+|:--------------------|:------------------------------------------------------------------------------:|-------|:--------:|
+| `ci.tekton.enabled` |                                 Tekton Enabled                                 | `""`  |    ◽     |
+| `aws.accessKey`     | Aws Access key to store ticketing service files; Required if Ticketing Enabled | `""`  |    ◽     |
+| `aws.secretKey`     | Aws Secret key to store ticketing service files, Required if Ticketing Enabled | `""`  |    ◽     |
 
 ## Notification Webhook
 To receive event notification from the operator, set cluster.notification.url to expect the following post request from the operator:

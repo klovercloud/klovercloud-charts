@@ -61,11 +61,13 @@ helm delete kc-operator
 
 ### Operator Parameters
 
-| Name                                   |                                            Description                                            | Value                                          | Required |
-|:---------------------------------------|:-------------------------------------------------------------------------------------------------:|------------------------------------------------|:--------:|
-| `operator.image.repository`            |                          Klovercloud Operator Public Registry and image                           | `quay.io/klovercloud/klovercloud-operator-poc` |    ✅     |
-| `operator.image.tag`                   |                                 Operator image version reference                                  | `latest`                                       |    ✅     |
-| `operator.namespace`                   |                             namespace for the Operator to be deployed                             | `"klovercloud"`                                |    ✅     |
+| Name                           |                  Description                   | Value                                          | Required |
+|:-------------------------------|:----------------------------------------------:|------------------------------------------------|:--------:|
+| `operator.image.repository`    | Klovercloud Operator Public Registry and image | `quay.io/klovercloud/klovercloud-operator-poc` |    ✅     |
+| `operator.image.tag`           |        Operator image version reference        | `latest`                                       |    ✅     |
+| `operator.namespace`           |   namespace for the Operator to be deployed    | `"klovercloud"`                                |    ◽     |
+| `agentOperator.image.tag`      |            Agent Operator Image Tag            | `""`                                           |    ◽     |
+| `agentOperator.chart.version ` |          Agent Operator Chart Version          | `""`                                           |    ◽     |
 
 ### Cluster Parameters
 

@@ -66,8 +66,6 @@ helm delete kc-operator
 | `operator.image.repository`            |                          Klovercloud Operator Public Registry and image                           | `quay.io/klovercloud/klovercloud-operator-poc` |    ✅     |
 | `operator.image.tag`                   |                                 Operator image version reference                                  | `latest`                                       |    ✅     |
 | `operator.namespace`                   |                             namespace for the Operator to be deployed                             | `"klovercloud"`                                |    ✅     |
-| `operator.db.type`                     | In memory database used for Operator to save its states. Values are `CacheControllerDB`, `BuntDB` | `"CacheControllerDB"`                          |    ◽     |
-| `operator.db.includePersistentStorage` | If operator storage information needs to be persisted then value will be `true` otherwise `false` | `"false"`                                      |    ◽     |
 
 ### Cluster Parameters
 

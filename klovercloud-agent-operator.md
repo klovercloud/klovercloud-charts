@@ -42,24 +42,25 @@ helm delete kc-agent-operator
 
 ## Operator Image Tags
 
-| tag     | Release Date |
-|:--------|:------------:|
-| `v2.1`  |   10/07/24   | 
-| `v2.0`  |   04/01/24   | 
-| `v1.99` |   18/05/23   |
+| tag         | Release Date |
+|:------------|:------------:|
+| `v2.1-saas` |   11/11/24   | 
+| `v2.1`      |   10/07/24   | 
+| `v2.0`      |   04/01/24   | 
+| `v1.99`     |   18/05/23   |
 
 
 ## Parameters
 
 ### Operator Parameters
 
-| Name                                                         |                                                                                                        Description                                                                                                        | Value                                            | Required |
-|:-------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|--------------------------------------------------|:--------:|
-| `operator.image.repository`                                  |                                                                                      Klovercloud Operator Public Registry and image                                                                                       | `quay.io/klovercloud/klovercloud-agent-operator` |    ◽     |
-| `operator.image.tag`                                         |                                                                                             Operator image version reference                                                                                              | `latest`                                         |    ◽     |
-| `operator.namespace`                                         |                                                                                         namespace for the Operator to be deployed                                                                                         | `"klovercloud"`                                  |    ◽     |
-| `operator.klovercloudPlatform.service.facade.apiAccessToken` |                         Used to access the platform services api's. <br/> This value is required if `platform.user.companyAdmin.email` are `platform.user.companyAdmin.password` is not provided.                         | `""`                                             |    ◽     |
-| `operator.hostAliases`                                       | If operator or platform services requires service Host Aliases. <br/> (e.g. `--set operator.hostAliases[0].ip='34.81.232.16',operator.hostAliases[0].hosts={'api-cp.brac.net,listener-cp.brac.net,gateway-cp.brac.net'}`) | `""`                                             |    ◽     |
+| Name                                                         |                                                                                                                 Description                                                                                                                 | Value                                            | Required |
+|:-------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|--------------------------------------------------|:--------:|
+| `operator.image.repository`                                  |                                                                                               Klovercloud Operator Public Registry and image                                                                                                | `quay.io/klovercloud/klovercloud-agent-operator` |    ◽     |
+| `operator.image.tag`                                         |                                                                                                      Operator image version reference                                                                                                       | `latest`                                         |    ◽     |
+| `operator.namespace`                                         |                                                                                                  namespace for the Operator to be deployed                                                                                                  | `"klovercloud"`                                  |    ◽     |
+| `operator.klovercloudPlatform.service.facade.apiAccessToken` |                                  Used to access the platform services api's. <br/> This value is required if `platform.user.companyAdmin.email` are `platform.user.companyAdmin.password` is not provided.                                  | `""`                                             |    ◽     |
+| `operator.hostAliases`                                       | If operator or platform services requires service Host Aliases. <br/> (e.g. `--set operator.hostAliases[0].ip='34.81.111.16',operator.hostAliases[0].hosts={'api-cp.klovercloud.io,listener-cp.klovercloud.io,gateway-cp.klovercloud.io'}`) | `""`                                             |    ◽     |
 
 ### Cluster Parameters
 

@@ -54,6 +54,7 @@ helm delete kc-operator
 
 | tag    | Release Date |
 |:-------|:------------:|
+| `v2.1` |   12/12/24   |
 | `v2.0` |   10/10/24   |
 
 

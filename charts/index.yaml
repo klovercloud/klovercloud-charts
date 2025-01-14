@@ -3,7 +3,7 @@ entries:
   klovercloud-agent-operator:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-01-14T17:24:16.628537334+06:00"
+    created: "2025-01-14T23:03:14.459239309+06:00"
     description: A Helm chart for Klovercloud Agent
     digest: f50940158d88d34ff92e365efe1df336dd0900fc176cc61c7d906dc605de8ffc
     name: klovercloud-agent-operator
@@ -13,7 +13,7 @@ entries:
     version: 0.2.6
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-01-14T17:24:16.621208522+06:00"
+    created: "2025-01-14T23:03:14.364608691+06:00"
     description: A Helm chart for Klovercloud Agent
     digest: cc44e0a7f5c62e6bb8b4aaa38ca3b8e49f1638624de0365f66fb49a4d62b475b
     name: klovercloud-agent-operator
@@ -23,7 +23,7 @@ entries:
     version: 0.2.5
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-01-14T17:24:16.61788885+06:00"
+    created: "2025-01-14T23:03:14.345285363+06:00"
     description: A Helm chart for Klovercloud Agent
     digest: 43f6a76d59d6ebae078b56ef7b7197d9b838ac46a8343f8b0b8093eb247ec19c
     name: klovercloud-agent-operator
@@ -33,7 +33,7 @@ entries:
     version: 0.2.4
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-01-14T17:24:16.615219429+06:00"
+    created: "2025-01-14T23:03:14.326872935+06:00"
     description: A Helm chart for Klovercloud Agent
     digest: 10f683c0cf23d67c822cce4b9a83c0837fa57ed9c8fa4f2e47594495ad5735f2
     name: klovercloud-agent-operator
@@ -43,7 +43,7 @@ entries:
     version: 0.2.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-01-14T17:24:16.601246777+06:00"
+    created: "2025-01-14T23:03:14.31731879+06:00"
     description: A Helm chart for Klovercloud Agent
     digest: 7bb4bbbc56e87a8f1f23df1df2ab7d58e11fbe3b93246e5fa32a8b81c39527d7
     name: klovercloud-agent-operator
@@ -54,9 +54,9 @@ entries:
   klovercloud-operator:
   - apiVersion: v2
     appVersion: 0.0.2
-    created: "2025-01-14T17:24:16.653809396+06:00"
+    created: "2025-01-14T23:03:14.576597025+06:00"
     description: A Helm chart for Klovercloud Helm Chart
-    digest: 025a24ff9817f2bf6d9182fcfd01c1de3cd6ae706b98b42a7067c0a5d4ee24fd
+    digest: cd9b1725bbada955e8cebc1f1d6c1d1dc439cce95b44ae83a21e62396f98b528
     name: klovercloud-operator
     type: application
     urls:
@@ -64,7 +64,7 @@ entries:
     version: 0.2.5
   - apiVersion: v2
     appVersion: 0.0.2
-    created: "2025-01-14T17:24:16.642410139+06:00"
+    created: "2025-01-14T23:03:14.563754283+06:00"
     description: A Helm chart for Klovercloud Helm Chart
     digest: f89eec0b72c87e41a8ce4315c54c385ffd4293498d7c6f24d2dd9e89a5a2139a
     name: klovercloud-operator
@@ -74,7 +74,7 @@ entries:
     version: 0.2.4
   - apiVersion: v2
     appVersion: 0.0.2
-    created: "2025-01-14T17:24:16.638976112+06:00"
+    created: "2025-01-14T23:03:14.540685158+06:00"
     description: A Helm chart for Klovercloud Helm Chart
     digest: 0a383ccdc6e3e1491b7cc864fa6537488077aaed355fd89d219d0fe8cb2801e2
     name: klovercloud-operator
@@ -84,7 +84,7 @@ entries:
     version: 0.2.3
   - apiVersion: v2
     appVersion: 0.0.2
-    created: "2025-01-14T17:24:16.635635149+06:00"
+    created: "2025-01-14T23:03:14.516549083+06:00"
     description: A Helm chart for Klovercloud Helm Chart
     digest: cc2644ebe6d9b0614ea659d33f9d24b89bbeed20c2fbf90882274fdd402bf1b2
     name: klovercloud-operator
@@ -94,7 +94,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 0.0.2
-    created: "2025-01-14T17:24:16.632442319+06:00"
+    created: "2025-01-14T23:03:14.494492432+06:00"
     description: A Helm chart for Klovercloud Helm Chart
     digest: 86f99dd0646c063143154af69eea99ddf32d25cc14fcf1d6ea171d8670b4eabb
     name: klovercloud-operator
@@ -102,4 +102,4 @@ entries:
     urls:
     - klovercloud-operator-0.2.0.tgz
     version: 0.2.0
-generated: "2025-01-14T17:24:16.591496178+06:00"
+generated: "2025-01-14T23:03:14.288528842+06:00"

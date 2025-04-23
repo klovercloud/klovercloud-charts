@@ -7,7 +7,7 @@ helm repo add klovercloud-charts https://klovercloud.github.io/klovercloud-chart
 
 helm repo update
 
-helm install kc-agent-operator --namespace klovercloud klovercloud-charts/klovercloud-agent-operator --version 0.2.6 \
+helm install kc-agent-operator --namespace klovercloud klovercloud-charts/klovercloud-agent-operator --version 1.0.0 \
     --set cluster.volumes.storageType="EKS" \
     --set cluster.volumes.storageClass.readWriteMany="csi-obs" \
     --set cluster.volumes.storageClass.readWriteOnce="csi-ebs" \
@@ -35,6 +35,7 @@ helm delete kc-agent-operator
 
 | version | Release Date |
 |:--------|:------------:|
+| `1.0.0` |   23/04/25   | 
 | `0.2.6` |   08/01/25   | 
 | `0.2.5` |   10/07/24   | 
 | `0.2.4` |   04/01/24   | 

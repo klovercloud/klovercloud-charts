@@ -2,10 +2,20 @@ apiVersion: v1
 entries:
   klovercloud-agent-operator:
   - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2025-04-23T19:50:08.777930029+06:00"
+    appVersion: 1.1.0
+    created: "2025-07-02T03:26:21.028243732+06:00"
     description: A Helm chart for Klovercloud Agent
-    digest: 5da897424e238a6a9cf6034c9dd08da39d463783a0aedbde0288464a9915e3ea
+    digest: cc8fb6c7f88b56f2e903e7fe80cdb61a41145d7aea4248d82dcdb8e785134d7b
+    name: klovercloud-agent-operator
+    type: application
+    urls:
+    - klovercloud-agent-operator-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-07-02T03:26:21.023455175+06:00"
+    description: A Helm chart for Klovercloud Agent
+    digest: d45e54c7c9817b1f09d7b0f4c1f336f4068cabe34f436421e2186422a054737a
     name: klovercloud-agent-operator
     type: application
     urls:
@@ -13,7 +23,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-04-23T19:50:08.774911107+06:00"
+    created: "2025-07-02T03:26:20.998635694+06:00"
     description: A Helm chart for Klovercloud Agent
     digest: 0812e3eda380f97ec9c9ec337c6eed5fa7c6482825b67a44d9170ac634695622
     name: klovercloud-agent-operator
@@ -24,7 +34,7 @@ entries:
   klovercloud-operator:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-04-23T19:50:08.790839732+06:00"
+    created: "2025-07-02T03:26:21.062230281+06:00"
     description: A Helm chart for Klovercloud Helm Chart
     digest: bdafd3ded1b9192bbbab30e209de95aecab665abb71e87b5541db823afcd0a2d
     name: klovercloud-operator
@@ -34,7 +44,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 0.0.2
-    created: "2025-04-23T19:50:08.786850648+06:00"
+    created: "2025-07-02T03:26:21.046785946+06:00"
     description: A Helm chart for Klovercloud Helm Chart
     digest: 39faee6ab64ffb51f58824c261a4e32a3377be3be7558503e2cb0a20b2d75f73
     name: klovercloud-operator
@@ -42,4 +52,4 @@ entries:
     urls:
     - klovercloud-operator-0.2.5.tgz
     version: 0.2.5
-generated: "2025-04-23T19:50:08.478487246+06:00"
+generated: "2025-07-02T03:26:20.709110961+06:00"

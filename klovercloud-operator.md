@@ -51,10 +51,11 @@ helm delete kc-operator
 
 ## Operator Image Tags
 
-| tag    | Release Date |
-|:-------|:------------:|
-| `v2.1` |   12/12/24   |
-| `v2.0` |   10/10/24   |
+| tag      | Release Date |
+|:---------|:------------:|
+| `v2.2.0` |   23/07/25   |
+| `v2.1`   |   12/12/24   |
+| `v2.0`   |   10/10/24   |
 
 
 ## Parameters

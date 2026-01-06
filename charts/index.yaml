@@ -2,6 +2,15 @@ apiVersion: v1
 entries:
   klovercloud-agent-operator:
   - apiVersion: v2
+    appVersion: 1.2.0
+    created: "2026-01-06T03:26:21.028243732+06:00"
+    description: A Helm chart for Klovercloud Agent
+    digest: cc8fb6c7f88b56f2e903e7fe80cdb61a41145d7aea4248d82dcdb8e78513437b
+    name: klovercloud-agent-operator
+    type: application
+    urls:
+      - klovercloud-agent-operator-1.2.0.tgz
+  - apiVersion: v2
     appVersion: 1.1.0
     created: "2025-07-02T03:26:21.028243732+06:00"
     description: A Helm chart for Klovercloud Agent
